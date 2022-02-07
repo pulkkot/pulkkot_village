@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('articles/', include('articles.urls')),
 
     # rest-auth
     path('rest-auth/', include('rest_auth.urls')),
