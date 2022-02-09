@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import Button from "./common/Button";
 function User() {
   return (
     <div>
-      <UserContainer>로그인 / 회원가입</UserContainer>
+      <UserContainer>
+        <Button>Log in</Button>
+        <Button>Sign up</Button>
+      </UserContainer>
     </div>
   );
 }

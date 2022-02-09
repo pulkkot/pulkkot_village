@@ -5,15 +5,17 @@ interface IMenuItem {
 }
 
 function MenuItem({ itemTitle }: IMenuItem) {
-  return <MenuItemContainer>{itemTitle}</MenuItemContainer>;
+  return <MenuItemContainer href="/">{itemTitle}</MenuItemContainer>;
 }
 
 export default MenuItem;
 
-const MenuItemContainer = styled.div`
+const MenuItemContainer = styled.a`
   height: 40px;
-  background-color: blue;
   display: flex;
   align-items: center;
   margin: 10px;
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.menuHover};
+  }
 `;

@@ -17,9 +17,12 @@ export default Header;
 const HeaderContainer = styled.div`
   display: flex;
   height: 70px;
-  background-color: pink;
+  background-color: ${({ theme }) => theme.colors.white};
   align-items: center;
   justify-content: space-around;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 3%);
 `;
 
-const MainLogo = styled.div``;
+const MainLogo = styled.div`
+  font-size: ${({ theme }) => theme.fontSize.title}px;
+`;

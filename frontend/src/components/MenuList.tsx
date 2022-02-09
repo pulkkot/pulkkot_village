@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import MenuItem from "./MenuItem";
 
-const menuList = ["CLASS", "SHOP NOW", "ABOUT PULKKOT", "SUBSCRIBE"];
+const menuList = ["ABOUT PULKKOT", "CLASS", "SHOP", "PROJECT", "STORE"];
 function MenuList() {
   return (
     <MenuListContainer>

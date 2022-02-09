@@ -36,6 +36,7 @@ const StyledButton = styled.button<IStyledButton>`
   font-size: ${({ theme }) => theme.fontSize.text}px;
   box-sizing: border-box;
   transition: 0.15s ease-in-out;
+  cursor: pointer;
   ${({ variant }) => {
     switch (variant) {
       case "primary":
@@ -44,7 +45,7 @@ const StyledButton = styled.button<IStyledButton>`
           color: ${({ theme }) => theme.colors.white};
           border: none;
           &:hover {
-            background-color: #0b5ed7;
+            background-color: ${({ theme }) => theme.colors.buttonHover};
           }
         `;
       case "secondary":
