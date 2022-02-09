@@ -1,4 +1,5 @@
 import MainPage from "pages/MainPage";
+import ProductPage from "pages/ProductPage";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "styles/GlobalStyles";
 import theme from "styles/theme";
@@ -8,6 +9,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <MainPage />
+      <ProductPage />
     </ThemeProvider>
   );
 }
