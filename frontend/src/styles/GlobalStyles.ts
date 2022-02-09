@@ -4,7 +4,7 @@ import reset from "styled-reset";
 const GlobalStyles = createGlobalStyle`
     ${reset}
     html,
-    body,
+    body
     #root {
     height: 100%;
     }
