@@ -5,7 +5,6 @@ const colors = {
   primary: "#2196F3",
   white: "#ffffff",
   black: "#000000",
-  buttonOrange: "#FFA000",
   dateText: "#939FA5",
   grayText: "#323D45",
   border: "#E5E5E5",
@@ -19,7 +18,7 @@ const fontSize = {
 };
 
 export type ColorTypes = typeof colors;
-export type fontSize = typeof fontSize;
+export type FontSizeTypes = typeof fontSize;
 
 const theme: DefaultTheme = {
   colors,

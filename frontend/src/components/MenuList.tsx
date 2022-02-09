@@ -6,7 +6,7 @@ function MenuList() {
   return (
     <MenuListContainer>
       {menuList.map((item: string) => (
-        <MenuItem itemTitle={item}></MenuItem>
+        <MenuItem key={`menu_list_item_${item}`} itemTitle={item}></MenuItem>
       ))}
     </MenuListContainer>
   );
