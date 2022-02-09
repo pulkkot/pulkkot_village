@@ -1,10 +1,14 @@
 import styled from "styled-components";
-
+import flower from "assets/img/flower.jpg";
+// @props 받아서 상품 정보 보여주기
 function ProductItem() {
   return (
     <ProductContainer>
-      <ProductImage />
-      <ProductInfo />
+      <ProductImage src={flower} />
+      <ProductInfoBox>
+        <ProductTitle>베로나 블랙 꽃다발</ProductTitle>
+        <ProductPrice>88,000 won</ProductPrice>
+      </ProductInfoBox>
     </ProductContainer>
   );
 }
@@ -12,19 +16,33 @@ function ProductItem() {
 export default ProductItem;
 
 const ProductContainer = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 400px;
+  height: 480px;
   border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
-const ProductImage = styled.div`
-  width: 100px;
-  height: 50px;
-  border: 3px solid red;
+const ProductImage = styled.img`
+  width: 380px;
+  height: 380px;
 `;
 
-const ProductInfo = styled.div`
-  width: 100px;
+const ProductInfoBox = styled.div`
+  width: 380px;
   height: 50px;
-  border: 3px solid blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ProductTitle = styled.div`
+  font-size: ${({ theme }) => theme.fontSize.text}px;
+`;
+
+const ProductPrice = styled.div`
+  font-size: ${({ theme }) => theme.fontSize.smallText}px;
 `;

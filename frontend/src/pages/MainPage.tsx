@@ -18,7 +18,7 @@ function MainPage(): ReactElement {
 export default MainPage;
 
 const MainContainer = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
 `;
 
 const MainContent = styled.div`
