@@ -1,3 +1,4 @@
+import ToastEditor from "components/editor/ToastEditor";
 import MainPage from "pages/MainPage";
 import ProductPage from "pages/ProductPage";
 import { ThemeProvider } from "styled-components";
@@ -9,6 +10,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <MainPage />
+      <ToastEditor />
       <ProductPage />
     </ThemeProvider>
   );
