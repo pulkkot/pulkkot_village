@@ -1,19 +1,29 @@
+import React from "react";
 import styled from "styled-components";
 import Button from "./common/Button";
 import Input from "./common/Input";
 import ToastEditor from "./editor/ToastEditor";
 
 function ClassInfo() {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+  };
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
     <ClassInfoContainer>
-      <Form>
+      <Form onSubmit={onSubmit}>
         <BeforeInput>
           클래스명
           <Input
             width="400px"
             height="50px"
             placeholder="클래스명을 입력하세요"
-          ></Input>
+            onChange={onChange}
+          />
         </BeforeInput>
         <Button variant="secondary" width="100px" height="50px">
           작성 완료
