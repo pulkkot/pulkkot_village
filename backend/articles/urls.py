@@ -1,10 +1,10 @@
 from django.urls import path
-from . import views
+from .views import ArticleListAPI, ArticleDetailAPI, ArticleImageListAPI
 
 app_name = 'articles'
+
 urlpatterns = [
-    path('', views.article_list),
-    path('create/', views.create_article),
-    path('<int:article_pk>/', views.article_detail),
-    path('image/', views.save_image),
+    path('', ArticleListAPI.as_view()),
+    path('<int:pk>/', ArticleDetailAPI.as_view()),
+    path('image/', ArticleImageListAPI.as_view()),
 ]
