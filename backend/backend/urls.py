@@ -22,13 +22,14 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  path('articles/', include('articles.urls')),
+    path('admin/', admin.site.urls),
+    path('articles/', include('articles.urls')),
+    path('products/', include('products.urls')),
 
-                  # rest-auth
-                  path('rest-auth/', include('rest_auth.urls')),
-                  path('rest-auth/signup/', include('rest_auth.registration.urls'))
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    # rest-auth
+    path('rest-auth/', include('rest_auth.urls')),
+    path('rest-auth/signup/', include('rest_auth.registration.urls'))
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 schema_view = get_schema_view(
     openapi.Info(
