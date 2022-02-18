@@ -1,11 +1,12 @@
-import ClassInfo from "components/class/ClassInfo";
 import ClassList from "components/class/ClassList";
+import MainLayout from "components/MainLayout";
 
 function ClassPage() {
   return (
     <>
-      {/* <ClassInfo /> */}
-      <ClassList />
+      <MainLayout>
+        <ClassList />
+      </MainLayout>
     </>
   );
 }

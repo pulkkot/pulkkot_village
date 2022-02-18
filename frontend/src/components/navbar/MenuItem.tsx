@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 interface IMenuItem {
   itemTitle: string;
+  href?: string;
 }
 
-function MenuItem({ itemTitle }: IMenuItem) {
-  return <MenuItemContainer href="/">{itemTitle}</MenuItemContainer>;
+function MenuItem({ itemTitle, href }: IMenuItem) {
+  return <MenuItemContainer href={href}>{itemTitle}</MenuItemContainer>;
 }
 
 export default MenuItem;
