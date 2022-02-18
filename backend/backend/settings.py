@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 
     # my_app
     'accounts',
@@ -151,5 +152,4 @@ SITE_ID = 1
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR)
 
-# CORS ALLOW
 CORS_ORIGIN_ALLOW_ALL = True
