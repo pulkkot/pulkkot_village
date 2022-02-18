@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 import { IClass } from "types/class";
 import ClassItem from "./ClassItem";
 
@@ -21,8 +22,8 @@ function ClassList() {
     console.log(classList);
   }, [classList]);
   return (
-    <>
-      클래스 리스트 페이지입니다
+    <ClassListContainer>
+      This is Class List Page
       {classList &&
         classList?.map((item: IClass, index: number) => (
           <ClassItem
@@ -31,8 +32,12 @@ function ClassList() {
             content={item.content}
           />
         ))}
-    </>
+    </ClassListContainer>
   );
 }
 
 export default ClassList;
+
+const ClassListContainer = styled.div`
+  width: 100%;
+`;

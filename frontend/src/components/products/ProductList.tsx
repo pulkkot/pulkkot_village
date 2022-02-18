@@ -3,14 +3,13 @@ import ProductItem from "./ProductItem";
 import axios from "axios";
 
 function ProductList() {
-  
   const getArticles = async () => {
-    const response = await axios.get('articles')
-    console.log(response)
-  }
+    const response = await axios.get("articles");
+    console.log(response);
+  };
   return (
     <ProductListContainer>
-      <button onClick={getArticles} >GET</button>
+      <button onClick={getArticles}>GET</button>
       <ProductListRow>
         <ProductItem />
         <ProductItem />
