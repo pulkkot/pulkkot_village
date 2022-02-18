@@ -5,7 +5,7 @@ import User from "../User";
 function Header() {
   return (
     <HeaderContainer>
-      <MainLogo>Pulkkot Village</MainLogo>
+      <MainLogo href="/">Pulkkot Village</MainLogo>
       <MenuList />
       <User />
     </HeaderContainer>
@@ -23,6 +23,6 @@ const HeaderContainer = styled.div`
   box-shadow: 0 2px 12px rgb(0 0 0 / 3%);
 `;
 
-const MainLogo = styled.div`
+const MainLogo = styled.a`
   font-size: ${({ theme }) => theme.fontSize.title}px;
 `;
