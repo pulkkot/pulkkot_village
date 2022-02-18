@@ -16,7 +16,7 @@ interface IEditorProps {
 function ToastEditor({ onChangeContent }: IEditorProps) {
   const editorRef = createRef<Editor>();
   const handleChange = () => {
-    // console.log(editorRef.current?.getInstance().getMarkdown());
+    // console.log(editorRef.current?.getInstance().getHTML());
     editorRef.current &&
       onChangeContent(editorRef.current?.getInstance().getMarkdown());
   };

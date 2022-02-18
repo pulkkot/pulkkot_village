@@ -1,3 +1,5 @@
+import "@toast-ui/editor/dist/toastui-editor-viewer.css";
+import { Viewer } from "@toast-ui/react-editor";
 import styled from "styled-components";
 import { IClass } from "types/class";
 
@@ -5,7 +7,8 @@ function ClassItem({ title, content }: IClass) {
   return (
     <ClassContatiner>
       <ClassTitle>{title} </ClassTitle>
-      <ClassContent> {content}</ClassContent>
+      {/* <ClassContent>{content}</ClassContent> */}
+      <Viewer initialValue={content} />
     </ClassContatiner>
   );
 }
