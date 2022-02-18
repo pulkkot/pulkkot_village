@@ -8,15 +8,17 @@ import "@toast-ui/editor/dist/toastui-editor.css";
 
 // SyntaxHighlight 모듈 추가
 import colorSyntax from "@toast-ui/editor-plugin-color-syntax";
-// import useEditor from "components/useEditor";
 
-// interface IEditor {
-//   className: string;
-// }
-function ToastEditor() {
+interface IEditorProps {
+  onChangeContent: (e: string | undefined) => void;
+}
+
+function ToastEditor({ onChangeContent }: IEditorProps) {
   const editorRef = createRef<Editor>();
   const handleChange = () => {
-    console.log(editorRef.current?.getInstance().getMarkdown());
+    // console.log(editorRef.current?.getInstance().getMarkdown());
+    editorRef.current &&
+      onChangeContent(editorRef.current?.getInstance().getMarkdown());
   };
 
   useEffect(() => {
@@ -60,7 +62,7 @@ function ToastEditor() {
   return (
     <EditorContainer>
       <Editor
-        initialValue="hello react editor world!"
+        initialValue="클래스 정보를 입력해주세요"
         previewStyle="vertical"
         height="600px"
         initialEditType="markdown"

@@ -1,17 +1,43 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import Button from "./common/Button";
-import Input from "./common/Input";
-import ToastEditor from "./editor/ToastEditor";
+import Button from "../common/Button";
+import Input from "../common/Input";
+import ToastEditor from "../editor/ToastEditor";
 
 function ClassInfo() {
+  const [content, setContent] = useState<string | undefined>("");
+  const [className, setClassName] = useState("");
+
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    setClassName(e.target.value);
   };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    postClassInfo();
   };
+
+  const onChangeContent = (e: string | undefined) => {
+    setContent(e);
+  };
+
+  const postClassInfo = async () => {
+    try {
+      const data = await axios.post("http://localhost:8000/articles/", {
+        title: className,
+        content: content,
+      });
+      console.log(data);
+      console.log(Response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    console.log(content);
+  }, [content]);
 
   return (
     <ClassInfoContainer>
@@ -30,7 +56,7 @@ function ClassInfo() {
         </Button>
       </Form>
 
-      <ToastEditor />
+      <ToastEditor onChangeContent={onChangeContent} />
     </ClassInfoContainer>
   );
 }

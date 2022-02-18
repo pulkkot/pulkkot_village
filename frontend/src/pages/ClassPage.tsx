@@ -1,7 +1,13 @@
-import ClassInfo from "components/ClassInfo";
+import ClassInfo from "components/class/ClassInfo";
+import ClassList from "components/class/ClassList";
 
 function ClassPage() {
-  return <ClassInfo />;
+  return (
+    <>
+      {/* <ClassInfo /> */}
+      <ClassList />
+    </>
+  );
 }
 
 export default ClassPage;
