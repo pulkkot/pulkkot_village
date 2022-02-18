@@ -42,19 +42,9 @@ class ArticleImageListAPI(generics.GenericAPIView, mixins.ListModelMixin):
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 
-<<<<<<< HEAD
-@api_view(['POST'])
-def save_image(request):
-    serializer = ArticleImageSerializer(data=request.data)
-    if serializer.is_valid(raise_exception=True):
-        serializer.save()
-        return Response(f'<img {serializer.data}/>')
-        # return Response(serializer.data)
-=======
     def post(self, request, format=None):
         serializer = ArticleImageSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
->>>>>>> 6de837d (feat: update articles image upload, add django-swagger)
