@@ -9,7 +9,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 class ArticleImageAdmin(admin.ModelAdmin):
-    fields = ['article', 'image']
+    fields = ['image']
 
 
 admin.site.register(Article, ArticleAdmin)

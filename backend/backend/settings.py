@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+
+    # swagger
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -144,12 +147,12 @@ AUTH_USER_MODEL = 'accounts.User'
 
 # DRF auth settings.
 REST_FRAMEWORK = {
-   'DEFAULT_AUTHENTICATION_CLASSES': [
-       'rest_framework.authentication.TokenAuthentication',
-   ],
-   # 'DEFAULT_PERMISSION_CLASSES': [
-   #      'rest_framework.permissions.IsAdminUser'
-   # ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    # 'DEFAULT_PERMISSION_CLASSES': [
+    #      'rest_framework.permissions.IsAdminUser'
+    # ],
 }
 
 SITE_ID = 1
