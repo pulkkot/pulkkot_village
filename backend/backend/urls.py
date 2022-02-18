@@ -22,6 +22,7 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
 urlpatterns = [
+
     path('admin/', admin.site.urls),
     path('articles/', include('articles.urls')),
     path('products/', include('products.urls')),

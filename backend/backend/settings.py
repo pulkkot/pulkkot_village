@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
     # cors
     'corsheaders',
+
 ]
 
 MIDDLEWARE = [
