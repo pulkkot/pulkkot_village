@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import MenuList from "./MenuList";
-import User from "./User";
+import User from "../User";
 
 function Header() {
   return (

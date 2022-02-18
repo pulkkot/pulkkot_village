@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { ReactElement } from "react";
-import Header from "components/Header";
+import Header from "components/navbar/Header";
 import Breakpoints from "styles/breakpoints";
 import media from "styles/media";
 import ClassPage from "./ClassPage";
