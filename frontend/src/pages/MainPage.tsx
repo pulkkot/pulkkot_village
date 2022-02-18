@@ -3,16 +3,13 @@ import React, { ReactElement } from "react";
 import Header from "components/navbar/Header";
 import Breakpoints from "styles/breakpoints";
 import media from "styles/media";
-import ClassPage from "./ClassPage";
 
 function MainPage(): ReactElement {
   return (
     <MainContainer>
       <Header />
       <MainContent>
-        <MainLayout>
-          <ClassPage />
-        </MainLayout>
+        <MainLayout></MainLayout>
       </MainContent>
     </MainContainer>
   );
