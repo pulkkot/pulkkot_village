@@ -38,13 +38,12 @@ function ClassInfo() {
       },
     };
     try {
-      const data = await axios.post(
+      const response = await axios.post(
         "http://localhost:8000/articles/",
         formData,
         config
       );
-      console.log(data);
-      console.log(Response);
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
@@ -57,7 +56,7 @@ function ClassInfo() {
   return (
     <ClassInfoContainer>
       <Form onSubmit={onSubmit}>
-        <BeforeInput>
+        <Label>
           클래스명
           <Input
             width="400px"
@@ -65,7 +64,7 @@ function ClassInfo() {
             placeholder="클래스명을 입력하세요"
             onChange={onChangeTitle}
           />
-        </BeforeInput>
+        </Label>
         <ThumbnailImage>
           썸네일 이미지
           <ImageInput
@@ -100,7 +99,7 @@ const Form = styled.form`
   flex-direction: column;
 `;
 
-const BeforeInput = styled.div``;
+const Label = styled.label``;
 
 const ThumbnailImage = styled.div``;
 
