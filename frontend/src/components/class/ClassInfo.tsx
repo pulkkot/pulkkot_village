@@ -28,7 +28,7 @@ function ClassInfo() {
 
   const postClassInfo = async () => {
     const formData = new FormData();
-    thumbnailImg && formData.append("thumbnailImg", thumbnailImg);
+    thumbnailImg && formData.append("thumbnail_image", thumbnailImg);
     formData.append("title", className);
     content && formData.append("content", content);
 

@@ -15,7 +15,7 @@ const menuList = [
   {
     menuId: 2,
     menuName: "CLASS",
-    menuLink: "/class",
+    menuLink: "/articles",
   },
   {
     menuId: 3,

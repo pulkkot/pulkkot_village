@@ -22,22 +22,37 @@ function ClassList() {
     console.log(classList);
   }, [classList]);
   return (
-    <ClassListContainer>
-      This is Class List Page
-      {classList &&
-        classList?.map((item: IClass, index: number) => (
-          <ClassItem
-            key={`class_list_${index}`}
-            title={item.title}
-            content={item.content}
-          />
-        ))}
-    </ClassListContainer>
+    <ClassWrapper>
+      <Title>Flower Class</Title>
+      <ClassListContainer>
+        {classList &&
+          classList?.map((item: IClass) => (
+            <ClassItem
+              key={`class_list_${item.id}`}
+              id={item.id}
+              title={item.title}
+              content={item.content}
+              thumbnail_image={item.thumbnail_image}
+            />
+          ))}
+      </ClassListContainer>
+    </ClassWrapper>
   );
 }
 
 export default ClassList;
 
-const ClassListContainer = styled.div`
+const ClassWrapper = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+`;
+
+const Title = styled.h1`
+  font-size: 25px;
+`;
+
+const ClassListContainer = styled.div`
+  display: flex;
 `;
