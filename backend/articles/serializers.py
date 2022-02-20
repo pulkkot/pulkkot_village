@@ -9,7 +9,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        fields = ['title', 'content']
+        fields = '__all__'
 
 
 class ArticleImageSerializer(serializers.ModelSerializer):

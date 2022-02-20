@@ -5,6 +5,7 @@ from django.conf import settings
 class Article(models.Model):
     # user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200, verbose_name="제목")
+    thumbnail_image = models.ImageField(upload_to="media/articles/%Y/%m/%d", verbose_name="썸네일 이미지")
     content = models.TextField(verbose_name="내용")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="등록 날짜")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="수정 날짜")
