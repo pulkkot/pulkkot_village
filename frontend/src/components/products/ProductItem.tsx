@@ -1,13 +1,19 @@
 import styled from "styled-components";
-import flower from "assets/img/flower.jpg";
-// @props 받아서 상품 정보 보여주기
-function ProductItem() {
+import { IProduct } from "types/product";
+
+function ProductItem({
+  name,
+  thumbnail_image,
+  description,
+  price,
+  stock,
+}: IProduct) {
   return (
     <ProductContainer>
-      <ProductImage src={flower} />
+      <ProductImage src={thumbnail_image} />
       <ProductInfoBox>
-        <ProductTitle>베로나 블랙 꽃다발</ProductTitle>
-        <ProductPrice>88,000 won</ProductPrice>
+        <ProductTitle>{name}</ProductTitle>
+        <ProductPrice>{price}won</ProductPrice>
       </ProductInfoBox>
     </ProductContainer>
   );

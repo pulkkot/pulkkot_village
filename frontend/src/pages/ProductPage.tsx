@@ -5,8 +5,8 @@ import ProductList from "components/products/ProductList";
 function ProductPage() {
   return (
     <MainLayout>
-      <ProductAdd />
-      {/* <ProductList /> */}
+      {/* <ProductAdd /> */}
+      <ProductList />
     </MainLayout>
   );
 }

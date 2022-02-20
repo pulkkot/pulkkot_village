@@ -1,24 +1,32 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import ProductItem from "./ProductItem";
 import axios from "axios";
+import { IProduct } from "types/product";
+import ProductItem from "./ProductItem";
 
 function ProductList() {
-  const getArticles = async () => {
-    const response = await axios.get("articles");
-    console.log(response);
+  const [productList, setProductList] = useState<IProduct[]>();
+  const getProductList = async () => {
+    const response = await axios.get("/products");
+    setProductList(response.data);
   };
+
+  useEffect(() => {
+    getProductList();
+  }, []);
+
   return (
     <ProductListContainer>
-      <button onClick={getArticles}>GET</button>
       <ProductListRow>
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-      </ProductListRow>
-      <ProductListRow>
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
+        {productList?.map((item) => (
+          <ProductItem
+            name={item.name}
+            description={item.description}
+            thumbnail_image={item.thumbnail_image}
+            price={item.price}
+            stock={item.stock}
+          ></ProductItem>
+        ))}
       </ProductListRow>
     </ProductListContainer>
   );
@@ -32,6 +40,6 @@ const ProductListContainer = styled.div`
   align-items: center;
 `;
 
-const ProductListRow = styled.div`
+const ProductListRow = styled.ul`
   display: flex;
 `;

@@ -2,7 +2,7 @@ import axios from "axios";
 import Button from "components/common/Button";
 import Input from "components/common/Input";
 import ToastEditor from "components/editor/ToastEditor";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 function ProductAdd() {
@@ -44,9 +44,7 @@ function ProductAdd() {
       console.log(error);
     }
   };
-  // useEffect(() => {
-  //   console.log(content);
-  // }, [content]);
+
   return (
     <ProductAddContainer>
       <Form onSubmit={onSubmit}>

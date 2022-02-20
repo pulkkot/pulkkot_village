@@ -4,7 +4,7 @@ import MainPage from "pages/MainPage";
 import ProductPage from "pages/ProductPage";
 import Header from "components/navbar/Header";
 import ClassAddPage from "pages/ClassAddPage";
-import ClassDetail from "components/class/ClassDetail";
+import ClassDetailPage from "pages/ClassDetailPage";
 
 function Router() {
   return (
@@ -13,7 +13,7 @@ function Router() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/articles" element={<ClassPage />} />
-        <Route path="/articles/:id" element={<ClassDetail />} />
+        <Route path="/articles/:id" element={<ClassDetailPage />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/articles/add" element={<ClassAddPage />} />
       </Routes>
