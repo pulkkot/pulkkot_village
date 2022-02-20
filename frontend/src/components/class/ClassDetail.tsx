@@ -1,6 +1,5 @@
 import { Viewer } from "@toast-ui/react-editor";
 import axios from "axios";
-import MainLayout from "components/MainLayout";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
@@ -24,14 +23,12 @@ function ClassDetail() {
   }, []);
 
   return (
-    <MainLayout>
-      <ClassDetailContainer>
-        <Title>{classInfo?.title}</Title>
-        <Content>
-          {classInfo && <Viewer initialValue={classInfo.content} />}
-        </Content>
-      </ClassDetailContainer>
-    </MainLayout>
+    <ClassDetailContainer>
+      <Title>{classInfo?.title}</Title>
+      <Content>
+        {classInfo && <Viewer initialValue={classInfo.content} />}
+      </Content>
+    </ClassDetailContainer>
   );
 }
 

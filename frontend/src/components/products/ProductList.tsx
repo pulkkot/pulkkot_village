@@ -16,10 +16,13 @@ function ProductList() {
   }, []);
 
   return (
-    <ProductListContainer>
-      <ProductListRow>
+    <ProductListWrapper>
+      <Title>Products</Title>
+      <ProductListContainer>
         {productList?.map((item) => (
           <ProductItem
+            key={`product_list_${item.id}`}
+            id={item.id}
             name={item.name}
             description={item.description}
             thumbnail_image={item.thumbnail_image}
@@ -27,19 +30,24 @@ function ProductList() {
             stock={item.stock}
           ></ProductItem>
         ))}
-      </ProductListRow>
-    </ProductListContainer>
+      </ProductListContainer>
+    </ProductListWrapper>
   );
 }
 
 export default ProductList;
 
-const ProductListContainer = styled.div`
+const ProductListWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-top: 200px;
 `;
 
-const ProductListRow = styled.ul`
+const Title = styled.h1`
+  font-size: 25px;
+`;
+
+const ProductListContainer = styled.ul`
   display: flex;
 `;

@@ -5,6 +5,7 @@ import ProductPage from "pages/ProductPage";
 import Header from "components/navbar/Header";
 import ClassAddPage from "pages/ClassAddPage";
 import ClassDetailPage from "pages/ClassDetailPage";
+import ProductDetailPage from "pages/ProductDetailPage";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
         <Route path="/articles/:id" element={<ClassDetailPage />} />
         <Route path="/products" element={<ProductPage />} />
         <Route path="/articles/add" element={<ClassAddPage />} />
+        <Route path="/products/:id" element={<ProductDetailPage />} />
       </Routes>
     </BrowserRouter>
   );

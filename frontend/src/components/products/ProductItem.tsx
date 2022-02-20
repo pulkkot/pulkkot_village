@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IProduct } from "types/product";
 
 function ProductItem({
+  id,
   name,
   thumbnail_image,
   description,
@@ -9,13 +11,15 @@ function ProductItem({
   stock,
 }: IProduct) {
   return (
-    <ProductContainer>
-      <ProductImage src={thumbnail_image} />
-      <ProductInfoBox>
-        <ProductTitle>{name}</ProductTitle>
-        <ProductPrice>{price}won</ProductPrice>
-      </ProductInfoBox>
-    </ProductContainer>
+    <Link to={`/products/${id}`}>
+      <ProductContainer>
+        <ProductImage src={thumbnail_image} />
+        <ProductInfoBox>
+          <ProductTitle>{name}</ProductTitle>
+          <ProductPrice>{price}won</ProductPrice>
+        </ProductInfoBox>
+      </ProductContainer>
+    </Link>
   );
 }
 
