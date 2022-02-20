@@ -8,11 +8,15 @@ import ToastEditor from "../editor/ToastEditor";
 function ClassInfo() {
   const [content, setContent] = useState<string | undefined>("");
   const [className, setClassName] = useState("");
+  const [thumbnailImg, setThumbnailImg] = useState<File>();
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setClassName(e.target.value);
   };
 
+  const onUploadImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.target.files && setThumbnailImg(e.target.files[0]);
+  };
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     postClassInfo();
@@ -23,11 +27,22 @@ function ClassInfo() {
   };
 
   const postClassInfo = async () => {
+    const formData = new FormData();
+    thumbnailImg && formData.append("thumbnailImg", thumbnailImg);
+    formData.append("title", className);
+    content && formData.append("content", content);
+
+    const config = {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    };
     try {
-      const data = await axios.post("http://localhost:8000/articles/", {
-        title: className,
-        content: content,
-      });
+      const data = await axios.post(
+        "http://localhost:8000/articles/",
+        formData,
+        config
+      );
       console.log(data);
       console.log(Response);
     } catch (error) {
@@ -36,8 +51,8 @@ function ClassInfo() {
   };
 
   useEffect(() => {
-    console.log(content);
-  }, [content]);
+    console.log(thumbnailImg);
+  }, [thumbnailImg]);
 
   return (
     <ClassInfoContainer>
@@ -48,9 +63,18 @@ function ClassInfo() {
             width="400px"
             height="50px"
             placeholder="클래스명을 입력하세요"
-            onChange={onChange}
+            onChange={onChangeTitle}
           />
         </BeforeInput>
+        <ThumbnailImage>
+          썸네일 이미지
+          <ImageInput
+            width="400px"
+            height="50px"
+            type="file"
+            onChange={onUploadImage}
+          />
+        </ThumbnailImage>
         <Button variant="secondary" width="100px" height="50px">
           작성 완료
         </Button>
@@ -71,11 +95,13 @@ const ClassInfoContainer = styled.div`
   height: 100%;
 `;
 
-const BeforeInput = styled.div`
-  margin-bottom: 50px;
-  margin-right: 50px;
-`;
-
 const Form = styled.form`
   display: flex;
+  flex-direction: column;
 `;
+
+const BeforeInput = styled.div``;
+
+const ThumbnailImage = styled.div``;
+
+const ImageInput = styled(Input)``;
