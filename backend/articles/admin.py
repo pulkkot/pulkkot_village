@@ -5,7 +5,7 @@ from .models import Article, ArticleImage
 
 
 class ArticleAdmin(admin.ModelAdmin):
-    fields = ['title', 'content']
+    fields = ['title', 'content', 'thumbnail_image']
 
 
 class ArticleImageAdmin(admin.ModelAdmin):
