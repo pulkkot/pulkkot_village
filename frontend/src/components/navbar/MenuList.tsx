@@ -22,11 +22,11 @@ const menuList = [
     menuName: "SHOP",
     menuLink: "/products",
   },
-  {
-    menuId: 4,
-    menuName: "PROJECT",
-    menuLink: "/",
-  },
+  // {
+  //   menuId: 4,
+  //   menuName: "PROJECT",
+  //   menuLink: "/",
+  // },
   {
     menuId: 5,
     menuName: "STORE",

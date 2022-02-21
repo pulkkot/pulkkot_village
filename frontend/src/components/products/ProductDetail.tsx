@@ -1,9 +1,11 @@
 import { Viewer } from "@toast-ui/react-editor";
 import axios from "axios";
+import Button from "components/common/Button";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import styled, { ThemeConsumer } from "styled-components";
 import { IProduct } from "types/product";
+import { comma } from "utils/comma";
 
 function ProductDetail() {
   const [productInfo, setProductInfo] = useState<IProduct>();
@@ -23,37 +25,74 @@ function ProductDetail() {
   }, []);
 
   return (
-    <ProductDetailContainer>
-      <Title>{productInfo?.name}</Title>
-      <ThumbnailImg src={productInfo?.thumbnail_image} />
-      <Price>{productInfo?.price}won</Price>
+    <Wrapper>
+      <ProductDetailContainer>
+        <ImageContainer>
+          <ThumbnailImg src={productInfo?.thumbnail_image} />
+        </ImageContainer>
+
+        <ProductInfo>
+          <Title>{productInfo?.name}</Title>
+          <Price>{productInfo ? comma(productInfo.price) : null}원</Price>
+          <ButtonWrapper>
+            <Button variant="primary" width="200px" height="50px">
+              구매하기
+            </Button>
+            <Button variant="primary" width="200px" height="50px">
+              장바구니
+            </Button>
+          </ButtonWrapper>
+        </ProductInfo>
+      </ProductDetailContainer>
       <Description>
         {productInfo && <Viewer initialValue={productInfo.description} />}
       </Description>
-    </ProductDetailContainer>
+    </Wrapper>
   );
 }
 
 export default ProductDetail;
 
-const ProductDetailContainer = styled.div`
-  margin-top: 100px;
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-const ThumbnailImg = styled.img`
-  width: 200px;
-  height: 250px;
+const ProductDetailContainer = styled.div`
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const Title = styled.h1`
-  font-size: 20px;
+const ImageContainer = styled.div``;
+const ThumbnailImg = styled.img`
+  width: 550px;
+  height: 550px;
 `;
-const Price = styled.h1`
-  font-size: 20px;
+const ProductInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 550px;
+  height: 550px;
+  padding-left: 40px;
+`;
+const Title = styled.h1`
+  font-size: 30px;
+  font-weight: 600;
+  color: #363636;
+`;
+const Price = styled.h3`
+  font-size: 24px;
+  color: #363636;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
 `;
 
 const Description = styled.div`
-  margin-top: 100px;
+  margin-top: 200px;
+  width: 70%;
 `;

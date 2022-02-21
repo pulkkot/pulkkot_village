@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IProduct } from "types/product";
+import { comma } from "utils/comma";
 
 function ProductItem({
   id,
@@ -16,7 +17,7 @@ function ProductItem({
         <ProductImage src={thumbnail_image} />
         <ProductInfoBox>
           <ProductTitle>{name}</ProductTitle>
-          <ProductPrice>{price}won</ProductPrice>
+          <ProductPrice>{comma(price)}won</ProductPrice>
         </ProductInfoBox>
       </ProductContainer>
     </Link>
@@ -26,9 +27,9 @@ function ProductItem({
 export default ProductItem;
 
 const ProductContainer = styled.div`
-  width: 400px;
+  width: 410px;
   height: 480px;
-  border: 1px solid gray;
+  /* border: 1px solid gray; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,17 +43,20 @@ const ProductImage = styled.img`
 
 const ProductInfoBox = styled.div`
   width: 380px;
-  height: 50px;
+  height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `;
 
 const ProductTitle = styled.div`
   font-size: ${({ theme }) => theme.fontSize.text}px;
+  font-weight: 600;
+  color: #363636;
 `;
 
 const ProductPrice = styled.div`
   font-size: ${({ theme }) => theme.fontSize.smallText}px;
+  margin-top: 15px;
 `;

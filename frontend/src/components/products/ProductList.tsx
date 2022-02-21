@@ -17,7 +17,7 @@ function ProductList() {
 
   return (
     <ProductListWrapper>
-      <Title>Products</Title>
+      {/* <Title>Products</Title> */}
       <ProductListContainer>
         {productList?.map((item) => (
           <ProductItem
@@ -49,5 +49,8 @@ const Title = styled.h1`
 `;
 
 const ProductListContainer = styled.ul`
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  margin: auto;
 `;
