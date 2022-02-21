@@ -48,47 +48,36 @@ function ProductAdd() {
   return (
     <ProductAddContainer>
       <Form onSubmit={onSubmit}>
-        <Label>
-          상품명
-          <Input
-            width="400px"
-            height="50px"
-            placeholder="상품명을 입력하세요"
-            onChange={(e) => setProductName(e.target.value)}
-          />
-        </Label>
-        <Label>
-          썸네일 이미지
-          <Input
-            width="400px"
+        <Input
+          height="50px"
+          placeholder="상품명을 입력하세요"
+          onChange={(e) => setProductName(e.target.value)}
+        />
+        <Input
+          height="50px"
+          placeholder="가격을 입력하세요"
+          onChange={(e) => setPrice(e.target.value)}
+        />
+        <Input
+          height="50px"
+          placeholder="재고를 입력하세요"
+          onChange={(e) => setStock(e.target.value)}
+        />
+        <ImageInputBox>
+          <Label htmlFor="thumbnail">썸네일 선택</Label>
+          {thumbnailImg && <ImagePreview>{thumbnailImg.name}</ImagePreview>}
+          <ImageInput
             height="50px"
             placeholder="썸네일을 입력하세요"
             type="file"
+            id="thumbnail"
             onChange={(e) =>
               e.target.files && setThumbnailImg(e.target.files[0])
             }
           />
-        </Label>
+        </ImageInputBox>
 
-        <Label>
-          가격
-          <Input
-            width="400px"
-            height="50px"
-            placeholder="가격을 입력하세요"
-            onChange={(e) => setPrice(e.target.value)}
-          />
-        </Label>
-        <Label>
-          재고
-          <Input
-            width="400px"
-            height="50px"
-            placeholder="재고를 입력하세요"
-            onChange={(e) => setStock(e.target.value)}
-          />
-        </Label>
-        <Button variant="secondary" width="100px" height="50px">
+        <Button variant="secondary" height="50px">
           작성 완료
         </Button>
       </Form>
@@ -99,10 +88,51 @@ function ProductAdd() {
 
 export default ProductAdd;
 
-const ProductAddContainer = styled.div``;
-const Form = styled.form`
+const ProductAddContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
-const Label = styled.label``;
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 100px;
+  width: 500px;
+`;
+const Label = styled.label`
+  display: inline-block;
+  padding: 0.75em 0.75em;
+  color: #999;
+  font-size: inherit;
+  line-height: normal;
+  cursor: pointer;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 0.25em;
+  width: 30%;
+  text-align: center;
+  height: 50px;
+`;
+const ImageInput = styled(Input)`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+`;
+
+const ImageInputBox = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+const ImagePreview = styled.div`
+  width: 100%;
+`;

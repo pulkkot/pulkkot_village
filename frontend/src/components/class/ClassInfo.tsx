@@ -117,17 +117,16 @@ const ImageInput = styled(Input)`
 
 const Label = styled.label`
   display: inline-block;
-  padding: 0.5em 0.75em;
+  padding: 0.75em 0.75em;
   color: #999;
   font-size: inherit;
   line-height: normal;
-  background-color: #fdfdfd;
   cursor: pointer;
-  border: 1px solid #ebebeb;
-  border-bottom-color: #e2e2e2;
+  border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 0.25em;
   width: 30%;
   text-align: center;
+  height: 50px;
 `;
 
 const ImageInputBox = styled.div`

@@ -35,6 +35,7 @@ const StyledInput = styled.input<{ borderRadius: string; fontSize: string }>`
   background: 0 0;
   font-size: ${({ fontSize }) => fontSize};
   padding: 0 20px;
+  color: #999;
 `;
 
 export default Input;

@@ -26,7 +26,7 @@ const Layout = styled.div`
   height: 100vh;
 
   ${media.large} {
-    background-color: #f1c9c9;
+    /* background-color: #f1c9c9; */
     width: ${Breakpoints.medium}px;
   }
 
