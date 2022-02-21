@@ -15,7 +15,7 @@ interface IButton
 
 function Button({
   variant = "primary",
-  width,
+  width = "100%",
   height = "20px",
   children,
   ...rest

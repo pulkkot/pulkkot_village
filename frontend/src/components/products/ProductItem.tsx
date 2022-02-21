@@ -29,7 +29,6 @@ export default ProductItem;
 const ProductContainer = styled.div`
   width: 410px;
   height: 480px;
-  /* border: 1px solid gray; */
   display: flex;
   flex-direction: column;
   justify-content: center;

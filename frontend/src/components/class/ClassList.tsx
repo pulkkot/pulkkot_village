@@ -23,7 +23,7 @@ function ClassList() {
   }, [classList]);
   return (
     <ClassWrapper>
-      <Title>Flower Class</Title>
+      {/* <Title>Flower Class</Title> */}
       <ClassListContainer>
         {classList &&
           classList?.map((item: IClass) => (
@@ -54,5 +54,7 @@ const Title = styled.h1`
 `;
 
 const ClassListContainer = styled.div`
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
 `;

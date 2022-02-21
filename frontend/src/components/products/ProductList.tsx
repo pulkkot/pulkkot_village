@@ -52,5 +52,4 @@ const ProductListContainer = styled.ul`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
 `;

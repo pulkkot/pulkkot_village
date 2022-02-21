@@ -25,6 +25,7 @@ function ClassDetail() {
   return (
     <ClassDetailContainer>
       <Title>{classInfo?.title}</Title>
+      <ClassImage src={classInfo?.thumbnail_image}></ClassImage>
       <Content>
         {classInfo && <Viewer initialValue={classInfo.content} />}
       </Content>
@@ -41,9 +42,23 @@ const ClassDetailContainer = styled.div`
   align-items: center;
 `;
 
+const ClassImage = styled.img`
+  margin-top: 20px;
+  width: 380px;
+  height: 380px;
+`;
+
 const Title = styled.h1`
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.title}px;
+  font-weight: 600;
 `;
 const Content = styled.div`
   margin-top: 100px;
+  width: 75%;
+
+  .toastui-editor-contents {
+    font-size: ${({ theme }) => theme.fontSize.content}px;
+    font-weight: 500;
+    color: #363636;
+  }
 `;

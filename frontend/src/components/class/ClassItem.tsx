@@ -19,20 +19,21 @@ function ClassItem({ id, title, thumbnail_image }: IClass) {
 export default ClassItem;
 
 const ClassContatiner = styled.div`
+  width: 410px;
+  height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 20px;
-  /* border: 0.5px solid gray; */
 `;
 const ClassTitle = styled.h2`
-  margin-top: 15px;
-  font-size: 20px;
+  font-size: ${({ theme }) => theme.fontSize.text}px;
+  font-weight: 600;
+  color: #363636;
+  margin-top: 20px;
 `;
 const ThumbnailImage = styled.img`
-  width: 350px;
-  height: 250px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 20px #f1ecec;
+  width: 380px;
+  height: 380px;
+  /* box-shadow: 5px 5px 20px #dbdada; */
 `;

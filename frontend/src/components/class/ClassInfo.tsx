@@ -56,29 +56,29 @@ function ClassInfo() {
   return (
     <ClassInfoContainer>
       <Form onSubmit={onSubmit}>
-        <Label>
-          클래스명
-          <Input
-            width="400px"
-            height="50px"
-            placeholder="클래스명을 입력하세요"
-            onChange={onChangeTitle}
-          />
-        </Label>
-        <ThumbnailImage>
-          썸네일 이미지
+        <Button variant="primary" height="50px">
+          작성 완료
+        </Button>
+
+        <Input
+          height="50px"
+          placeholder="클래스명을 입력하세요"
+          onChange={onChangeTitle}
+          required
+        />
+
+        <ImageInputBox>
+          <Label htmlFor="thumbnail">썸네일 선택</Label>
+          {thumbnailImg && <ImagePreview>{thumbnailImg.name}</ImagePreview>}
           <ImageInput
-            width="400px"
             height="50px"
             type="file"
             onChange={onUploadImage}
+            required
+            id="thumbnail"
           />
-        </ThumbnailImage>
-        <Button variant="secondary" width="100px" height="50px">
-          작성 완료
-        </Button>
+        </ImageInputBox>
       </Form>
-
       <ToastEditor onChangeContent={onChangeContent} />
     </ClassInfoContainer>
   );
@@ -91,16 +91,51 @@ const ClassInfoContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  height: 200px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 100px;
+  width: 500px;
 `;
 
-const Label = styled.label``;
+const ImageInput = styled(Input)`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+`;
 
-const ThumbnailImage = styled.div``;
+const Label = styled.label`
+  display: inline-block;
+  padding: 0.5em 0.75em;
+  color: #999;
+  font-size: inherit;
+  line-height: normal;
+  background-color: #fdfdfd;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: 0.25em;
+  width: 30%;
+  text-align: center;
+`;
 
-const ImageInput = styled(Input)``;
+const ImageInputBox = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+`;
+
+const ImagePreview = styled.div`
+  width: 100%;
+`;
