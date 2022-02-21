@@ -1,36 +1,32 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import Button from "components/common/Button";
+import Input from "components/common/Input";
+import ToastEditor from "components/editor/ToastEditor";
+import { useState } from "react";
 import styled from "styled-components";
-import Button from "../common/Button";
-import Input from "../common/Input";
-import ToastEditor from "../editor/ToastEditor";
 
-function ClassInfo() {
-  const [content, setContent] = useState<string | undefined>("");
-  const [className, setClassName] = useState("");
+function ProductAdd() {
+  const [productName, setProductName] = useState("");
   const [thumbnailImg, setThumbnailImg] = useState<File>();
-
-  const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setClassName(e.target.value);
-  };
-
-  const onUploadImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.target.files && setThumbnailImg(e.target.files[0]);
-  };
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    postClassInfo();
-  };
+  const [price, setPrice] = useState("");
+  const [stock, setStock] = useState("");
+  const [content, setContent] = useState<string | undefined>("");
 
   const onChangeContent = (e: string | undefined) => {
     setContent(e);
   };
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    addProduct();
+  };
 
-  const postClassInfo = async () => {
+  const addProduct = async () => {
     const formData = new FormData();
+    formData.append("name", productName);
     thumbnailImg && formData.append("thumbnail_image", thumbnailImg);
-    formData.append("title", className);
-    content && formData.append("content", content);
+    content && formData.append("description", content);
+    formData.append("price", price);
+    formData.append("stock", stock);
 
     const config = {
       headers: {
@@ -39,7 +35,7 @@ function ClassInfo() {
     };
     try {
       const response = await axios.post(
-        "http://localhost:8000/articles/",
+        "http://localhost:8000/products/",
         formData,
         config
       );
@@ -49,72 +45,64 @@ function ClassInfo() {
     }
   };
 
-  useEffect(() => {
-    console.log(thumbnailImg);
-  }, [thumbnailImg]);
-
   return (
-    <ClassInfoContainer>
+    <ProductAddContainer>
       <Form onSubmit={onSubmit}>
-        <Button variant="primary" height="50px">
-          작성 완료
-        </Button>
-
         <Input
           height="50px"
-          placeholder="클래스명을 입력하세요"
-          onChange={onChangeTitle}
-          required
+          placeholder="상품명을 입력하세요"
+          onChange={(e) => setProductName(e.target.value)}
         />
-
+        <Input
+          height="50px"
+          placeholder="가격을 입력하세요"
+          onChange={(e) => setPrice(e.target.value)}
+        />
+        <Input
+          height="50px"
+          placeholder="재고를 입력하세요"
+          onChange={(e) => setStock(e.target.value)}
+        />
         <ImageInputBox>
           <Label htmlFor="thumbnail">썸네일 선택</Label>
           {thumbnailImg && <ImagePreview>{thumbnailImg.name}</ImagePreview>}
           <ImageInput
             height="50px"
+            placeholder="썸네일을 입력하세요"
             type="file"
-            onChange={onUploadImage}
-            required
             id="thumbnail"
+            onChange={(e) =>
+              e.target.files && setThumbnailImg(e.target.files[0])
+            }
           />
         </ImageInputBox>
+
+        <Button variant="secondary" height="50px">
+          작성 완료
+        </Button>
       </Form>
       <ToastEditor onChangeContent={onChangeContent} />
-    </ClassInfoContainer>
+    </ProductAddContainer>
   );
 }
 
-export default ClassInfo;
+export default ProductAdd;
 
-const ClassInfoContainer = styled.div`
+const ProductAddContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 `;
-
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 300px;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
   margin-top: 100px;
   width: 500px;
 `;
-
-const ImageInput = styled(Input)`
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-`;
-
 const Label = styled.label`
   display: inline-block;
   padding: 0.75em 0.75em;
@@ -127,6 +115,16 @@ const Label = styled.label`
   width: 30%;
   text-align: center;
   height: 50px;
+`;
+const ImageInput = styled(Input)`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 `;
 
 const ImageInputBox = styled.div`

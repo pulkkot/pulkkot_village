@@ -5,6 +5,7 @@ interface IStyledButton {
   variant?: "primary" | "secondary";
   width?: string;
   height?: string;
+  borderRadius?: string;
 }
 
 interface IButton
@@ -15,13 +16,20 @@ interface IButton
 
 function Button({
   variant = "primary",
-  width,
+  width = "100%",
   height = "20px",
+  borderRadius,
   children,
   ...rest
 }: IButton) {
   return (
-    <StyledButton variant={variant} width={width} height={height} {...rest}>
+    <StyledButton
+      variant={variant}
+      width={width}
+      height={height}
+      borderRadius={borderRadius}
+      {...rest}
+    >
       {children}
     </StyledButton>
   );
@@ -32,7 +40,7 @@ export default Button;
 const StyledButton = styled.button<IStyledButton>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
-  border-radius: 4px;
+  border-radius: ${({ borderRadius }) => borderRadius};
   font-size: ${({ theme }) => theme.fontSize.text}px;
   box-sizing: border-box;
   transition: 0.15s ease-in-out;

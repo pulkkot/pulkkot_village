@@ -15,18 +15,18 @@ const menuList = [
   {
     menuId: 2,
     menuName: "CLASS",
-    menuLink: "/class",
+    menuLink: "/articles",
   },
   {
     menuId: 3,
     menuName: "SHOP",
     menuLink: "/products",
   },
-  {
-    menuId: 4,
-    menuName: "PROJECT",
-    menuLink: "/",
-  },
+  // {
+  //   menuId: 4,
+  //   menuName: "PROJECT",
+  //   menuLink: "/",
+  // },
   {
     menuId: 5,
     menuName: "STORE",

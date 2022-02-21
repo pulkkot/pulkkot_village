@@ -1,24 +1,34 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import flower from "assets/img/flower.jpg";
-// @props 받아서 상품 정보 보여주기
-function ProductItem() {
+import { IProduct } from "types/product";
+import { comma } from "utils/comma";
+
+function ProductItem({
+  id,
+  name,
+  thumbnail_image,
+  description,
+  price,
+  stock,
+}: IProduct) {
   return (
-    <ProductContainer>
-      <ProductImage src={flower} />
-      <ProductInfoBox>
-        <ProductTitle>베로나 블랙 꽃다발</ProductTitle>
-        <ProductPrice>88,000 won</ProductPrice>
-      </ProductInfoBox>
-    </ProductContainer>
+    <Link to={`/products/${id}`}>
+      <ProductContainer>
+        <ProductImage src={thumbnail_image} />
+        <ProductInfoBox>
+          <ProductTitle>{name}</ProductTitle>
+          <ProductPrice>{comma(price)}won</ProductPrice>
+        </ProductInfoBox>
+      </ProductContainer>
+    </Link>
   );
 }
 
 export default ProductItem;
 
 const ProductContainer = styled.div`
-  width: 400px;
+  width: 410px;
   height: 480px;
-  border: 1px solid gray;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,17 +42,20 @@ const ProductImage = styled.img`
 
 const ProductInfoBox = styled.div`
   width: 380px;
-  height: 50px;
+  height: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `;
 
 const ProductTitle = styled.div`
   font-size: ${({ theme }) => theme.fontSize.text}px;
+  font-weight: 600;
+  color: #363636;
 `;
 
 const ProductPrice = styled.div`
   font-size: ${({ theme }) => theme.fontSize.smallText}px;
+  margin-top: 15px;
 `;

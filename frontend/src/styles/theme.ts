@@ -7,16 +7,17 @@ const colors = {
   black: "#000000",
   dateText: "#939FA5",
   grayText: "#323D45",
-  border: "#E5E5E5",
+  border: "#b1acac",
   buttonHover: "#81baa3",
   menuHover: "#f5f5f5",
 };
 
 const fontSize = {
-  title: 20,
+  title: 27,
+  content: 18,
   subTitle: 16,
-  text: 14,
-  smallText: 12,
+  text: 15,
+  smallText: 13,
 };
 
 export type ColorTypes = typeof colors;
