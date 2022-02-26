@@ -31,7 +31,7 @@ const Layout = styled.div`
   }
 
   ${media.medium} {
-    background-color: #c9c9f3;
+    /* background-color: #c9c9f3; */
     width: ${Breakpoints.small}px;
   }
   /* 
