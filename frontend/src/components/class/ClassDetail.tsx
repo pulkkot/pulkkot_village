@@ -26,7 +26,7 @@ function ClassDetail() {
     <ClassDetailContainer>
       <Title>{classInfo?.title}</Title>
       <SubTitle>
-        오로지 꽃, 그리고 나에게만 집중하며 손끝으로 전해지는 계절의 아름다움을
+        꽃, 그리고 나에게만 집중하며 손끝으로 전해지는 계절의 아름다움을
         느껴보세요.
       </SubTitle>
       <ClassImage src={classInfo?.thumbnail_image}></ClassImage>
