@@ -21,20 +21,22 @@ function ProductOrder() {
           <Label htmlFor="ordererName">이름</Label>
           <Input
             id="ordererName"
-            width="40%"
+            width="50%"
             height="50px"
             placeholder="이름을 입력해주세요"
             onChange={(e) => setProductName(e.target.value)}
+            required
           />
         </InputWrapper>
         <InputWrapper>
           <Label htmlFor="ordererContact">휴대폰 번호</Label>
           <Input
             id="ordererContact"
-            width="40%"
+            width="50%"
             height="50px"
             placeholder="휴대폰 번호를 입력해주세요"
             onChange={(e) => setPrice(e.target.value)}
+            required
           />
         </InputWrapper>
         <SubTitle>배송지 정보</SubTitle>
@@ -42,33 +44,52 @@ function ProductOrder() {
           <Label htmlFor="deliveryAddress">주소</Label>
           <Input
             id="deliveryAddress"
-            width="40%"
+            width="50%"
             height="50px"
             placeholder="배송 받을 주소를 입력해주세요"
             onChange={(e) => setStock(e.target.value)}
+            required
           />
         </InputWrapper>
         <InputWrapper>
           <Label htmlFor="recipientName">받는 분 이름</Label>
           <Input
             id="recipientName"
-            width="40%"
+            width="50%"
             height="50px"
             placeholder="이름을 입력해주세요"
             onChange={(e) => setStock(e.target.value)}
+            required
           />
         </InputWrapper>
         <InputWrapper>
           <Label htmlFor="recipientContact">받는 분 연락처</Label>
           <Input
             id="recipientContact"
-            width="40%"
+            width="50%"
             height="50px"
             placeholder="번호를 입력해주세요"
             onChange={(e) => setPrice(e.target.value)}
+            required
           />
         </InputWrapper>
 
+        <SubTitle>약관 동의</SubTitle>
+        <InputWrapper>
+          <Label htmlFor="deliveryAddress">
+            구매조건 확인 <br /> 결제 진행 동의
+          </Label>
+          <Input
+            id="deliveryAddress"
+            width="20px"
+            height="20px"
+            placeholder="배송 받을 주소를 입력해주세요"
+            onChange={(e) => setStock(e.target.value)}
+            type="checkbox"
+            required
+          />
+          <span>ㅤ개인정보 수집 및 이용 동의 약관보기</span>
+        </InputWrapper>
         <ButtonWrapper>
           <Button variant="primary" height="50px" width="50%">
             작성 완료
@@ -120,6 +141,7 @@ const Label = styled.label`
   line-height: normal;
   /* border: 1px solid ${({ theme }) => theme.colors.border}; */
   /* border-radius: 0.25em; */
+  display: inline-block;
   width: 30%;
   text-align: center;
   height: 50px;
@@ -130,6 +152,7 @@ const InputWrapper = styled.div`
   display: flex;
   width: 80%;
   margin-top: 20px;
+  align-items: center;
 `;
 
 const ButtonWrapper = styled.div`
