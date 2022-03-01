@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styles/media";
 import MenuItem from "./MenuItem";
 
 interface IMenu {
@@ -52,4 +53,7 @@ export default MenuList;
 const MenuListContainer = styled.div`
   display: flex;
   align-items: center;
+  ${media.medium} {
+    display: none;
+  }
 `;

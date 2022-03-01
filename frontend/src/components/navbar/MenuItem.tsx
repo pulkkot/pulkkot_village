@@ -16,6 +16,7 @@ const MenuItemContainer = styled.a`
   display: flex;
   align-items: center;
   margin: 10px;
+  color: ${({ theme }) => theme.colors.white};
   &:hover {
     background-color: ${({ theme }) => theme.colors.menuHover};
   }
