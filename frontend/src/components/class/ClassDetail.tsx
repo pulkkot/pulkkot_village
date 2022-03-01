@@ -25,6 +25,10 @@ function ClassDetail() {
   return (
     <ClassDetailContainer>
       <Title>{classInfo?.title}</Title>
+      <SubTitle>
+        꽃, 그리고 나에게만 집중하며 손끝으로 전해지는 계절의 아름다움을
+        느껴보세요.
+      </SubTitle>
       <ClassImage src={classInfo?.thumbnail_image}></ClassImage>
       <Content>
         {classInfo && <Viewer initialValue={classInfo.content} />}
@@ -40,6 +44,14 @@ const ClassDetailContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+`;
+
+const SubTitle = styled.span`
+  margin-top: 20px;
+  color: ${({ theme }) => theme.colors.grayText};
+  display: inline-block;
+  width: 25%;
 `;
 
 const ClassImage = styled.img`
@@ -51,6 +63,7 @@ const ClassImage = styled.img`
 const Title = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.title}px;
   font-weight: 600;
+  color: ${({ theme }) => theme.colors.grayText};
 `;
 const Content = styled.div`
   margin-top: 100px;

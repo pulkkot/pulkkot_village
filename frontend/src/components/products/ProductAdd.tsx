@@ -3,6 +3,7 @@ import Button from "components/common/Button";
 import Input from "components/common/Input";
 import ToastEditor from "components/editor/ToastEditor";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 function ProductAdd() {
@@ -11,6 +12,7 @@ function ProductAdd() {
   const [price, setPrice] = useState("");
   const [stock, setStock] = useState("");
   const [content, setContent] = useState<string | undefined>("");
+  const navigate = useNavigate();
 
   const onChangeContent = (e: string | undefined) => {
     setContent(e);
@@ -40,6 +42,8 @@ function ProductAdd() {
         config
       );
       console.log(response);
+      alert("상품 정보가 등록됐습니다.");
+      navigate("/products");
     } catch (error) {
       console.log(error);
     }

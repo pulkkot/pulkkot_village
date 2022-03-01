@@ -9,7 +9,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 function Input({
-  width = "100%",
+  width,
   height,
   borderRadius = "4px",
   fontSize = "18px",

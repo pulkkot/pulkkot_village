@@ -1,14 +1,15 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "../common/Button";
 import Input from "../common/Input";
 import ToastEditor from "../editor/ToastEditor";
-
 function ClassInfo() {
   const [content, setContent] = useState<string | undefined>("");
   const [className, setClassName] = useState("");
   const [thumbnailImg, setThumbnailImg] = useState<File>();
+  const navigate = useNavigate();
 
   const onChangeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
     setClassName(e.target.value);
@@ -43,7 +44,10 @@ function ClassInfo() {
         formData,
         config
       );
+
       console.log(response);
+      alert("클래스 정보가 등록됐습니다.");
+      navigate("/articles");
     } catch (error) {
       console.log(error);
     }

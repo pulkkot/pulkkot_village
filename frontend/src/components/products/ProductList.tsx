@@ -17,7 +17,7 @@ function ProductList() {
 
   return (
     <ProductListWrapper>
-      {/* <Title>Products</Title> */}
+      <Title>Products</Title>
       <ProductListContainer>
         {productList?.map((item) => (
           <ProductItem
@@ -41,11 +41,13 @@ const ProductListWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 200px;
+  margin-top: 100px;
 `;
 
 const Title = styled.h1`
-  font-size: 25px;
+  font-size: ${({ theme }) => theme.fontSize.title}px;
+  color: ${({ theme }) => theme.colors.grayText};
+  margin-bottom: 25px;
 `;
 
 const ProductListContainer = styled.ul`
