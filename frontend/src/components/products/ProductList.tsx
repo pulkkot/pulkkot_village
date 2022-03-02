@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 import { IProduct } from "types/product";
 import ProductItem from "./ProductItem";
+import media from "styles/media";
 
 function ProductList() {
   const [productList, setProductList] = useState<IProduct[]>();
@@ -17,7 +18,9 @@ function ProductList() {
 
   return (
     <ProductListWrapper>
-      <Title>Products</Title>
+      <Title>
+        <h1>상품 보기</h1>
+      </Title>
       <ProductListContainer>
         {productList?.map((item) => (
           <ProductItem
@@ -42,16 +45,29 @@ const ProductListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100px;
+  ${media.medium} {
+    margin-top: 60px;
+  }
 `;
 
-const Title = styled.h1`
+const Title = styled.div`
   font-size: ${({ theme }) => theme.fontSize.title}px;
   color: ${({ theme }) => theme.colors.grayText};
   margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${media.medium} {
+    height: 60px;
+    font-size: ${({ theme }) => theme.fontSize.content}px;
+    border-bottom: #d3d3d3 1px solid;
+  }
 `;
 
 const ProductListContainer = styled.ul`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;

@@ -40,9 +40,9 @@ const MenuListContainer = styled.ul<{ visible: boolean }>`
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.black};
   position: absolute;
-  top: 50px;
+  top: 60px;
   height: 100vh;
-  width: 70vw;
+  width: 75vw;
   z-index: 999;
   ${(props) =>
     props.visible
@@ -54,7 +54,7 @@ const MenuListContainer = styled.ul<{ visible: boolean }>`
         `};
 
   transition: all 0.5s ease-in-out;
-  transform: translateX(${({ visible }) => (visible ? 0 : -70)}vw);
+  transform: translateX(${({ visible }) => (visible ? 0 : -75)}vw);
 `;
 
 const Background = styled.div<{ visible: boolean }>`

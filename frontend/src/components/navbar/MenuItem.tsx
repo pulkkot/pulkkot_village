@@ -18,16 +18,17 @@ function MenuItem({ itemTitle, href }: IMenuItem) {
 export default MenuItem;
 
 const MenuItemContainer = styled.li`
-  height: 40px;
+  height: 60px;
   display: flex;
   align-items: center;
-  margin: 10px;
+  padding: 10px;
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
   &:hover {
     background-color: ${({ theme }) => theme.colors.menuHover};
   }
   ${media.medium} {
-    margin-left: 20px;
+    padding-left: 20px;
+    border-bottom: #d3d3d3 1px solid;
   }
 `;

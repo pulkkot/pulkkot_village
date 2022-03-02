@@ -44,6 +44,7 @@ const HeaderContainer = styled.div`
   box-shadow: 0 2px 12px rgb(0 0 0 / 3%);
   ${media.medium} {
     justify-content: center;
+    height: 60px;
   }
 `;
 

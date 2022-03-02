@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import media from "styles/media";
 import { IProduct } from "types/product";
 import { comma } from "utils/comma";
 
@@ -33,11 +34,20 @@ const ProductContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${media.medium} {
+    width: 210px;
+    height: 260px;
+    margin-bottom: 20px;
+  }
 `;
 
 const ProductImage = styled.img`
   width: 380px;
   height: 380px;
+  ${media.medium} {
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 const ProductInfoBox = styled.div`
