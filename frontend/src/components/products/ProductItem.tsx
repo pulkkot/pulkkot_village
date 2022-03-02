@@ -18,7 +18,7 @@ function ProductItem({
         <ProductImage src={thumbnail_image} />
         <ProductInfoBox>
           <ProductTitle>{name}</ProductTitle>
-          <ProductPrice>{comma(price)}won</ProductPrice>
+          <ProductSubTitle> Lorem ipsum dolor sit amet</ProductSubTitle>
         </ProductInfoBox>
       </ProductContainer>
     </Link>
@@ -65,7 +65,11 @@ const ProductTitle = styled.div`
   color: #363636;
 `;
 
-const ProductPrice = styled.div`
+const ProductSubTitle = styled.span`
   font-size: ${({ theme }) => theme.fontSize.smallText}px;
   margin-top: 15px;
+  color: ${({ theme }) => theme.colors.primary};
+  ${media.medium} {
+    margin-top: 5px;
+  }
 `;

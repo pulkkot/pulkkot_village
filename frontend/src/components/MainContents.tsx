@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import main_page_img_1 from "assets/images/main_page_img_1.jpg";
-import main_page_img_5 from "assets/images/main_page_img_5.jpg";
-import main_page_img_4 from "assets/images/main_page_img_4.jpg";
 import main_page_img_2 from "assets/images/main_page_img_2.jpg";
+import main_page_img_4 from "assets/images/main_page_img_4.jpg";
+import main_page_img_5 from "assets/images/main_page_img_5.jpg";
+import MainCarousel from "./MainCarousel";
 
 function MainContents() {
   return (
     <MainContentsContainer>
-      <MainContentItem href="/">
-        <MainImage src={main_page_img_1} />
-      </MainContentItem>
+      <MainCarousel />
       <MainContentItem href="/products">
         <MainImage src={main_page_img_5} />
       </MainContentItem>
@@ -25,7 +24,9 @@ function MainContents() {
 
 export default MainContents;
 
-const MainContentsContainer = styled.div``;
+const MainContentsContainer = styled.div`
+  width: 100%;
+`;
 const MainImage = styled.img`
   width: 100%;
   margin-bottom: 200px;

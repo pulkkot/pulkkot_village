@@ -40,7 +40,7 @@ const HeaderContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
   align-items: center;
   justify-content: space-around;
-
+  z-index: 100;
   box-shadow: 0 2px 12px rgb(0 0 0 / 3%);
   ${media.medium} {
     justify-content: center;

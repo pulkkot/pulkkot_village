@@ -29,6 +29,7 @@ export default SideBar;
 
 const SideBarContainer = styled.div`
   display: none;
+  z-index: 999;
   ${media.medium} {
     display: unset;
     position: fixed;
