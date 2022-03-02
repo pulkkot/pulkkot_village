@@ -44,6 +44,7 @@ const LocationTitle = styled.h1`
     font-size: ${({ theme }) => theme.fontSize.subTitle}px;
     width: 100%;
     margin-bottom: 10px;
+    margin-left: 10px;
   }
 `;
 
@@ -55,6 +56,9 @@ const MapAnchor = styled.a`
 const LocationSubTitle = styled.span`
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 20px;
+  ${media.medium} {
+    margin-left: 10px;
+  }
 `;
 
 const LocationImage = styled.img`
