@@ -1,4 +1,4 @@
-import MainLayout from "components/MainLayout";
+import MainLayout from "components/home/MainLayout";
 import ProductAdd from "components/products/ProductAdd";
 import ProductList from "components/products/ProductList";
 

@@ -1,5 +1,5 @@
 import ClassDetail from "components/class/ClassDetail";
-import MainLayout from "components/MainLayout";
+import MainLayout from "components/home/MainLayout";
 
 function ClassDetailPage() {
   return (

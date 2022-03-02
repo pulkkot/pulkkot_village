@@ -8,6 +8,7 @@ import ClassDetailPage from "pages/ClassDetailPage";
 import ProductDetailPage from "pages/ProductDetailPage";
 import ProductAddPage from "pages/ProductAddPage";
 import ProductOrderPage from "pages/ProductOrderPage";
+import AboutPage from "pages/AboutPage";
 
 function Router() {
   return (
@@ -15,6 +16,7 @@ function Router() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/articles" element={<ClassPage />} />
         <Route path="/articles/add" element={<ClassAddPage />} />
         <Route path="/articles/:id" element={<ClassDetailPage />} />

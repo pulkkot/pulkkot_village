@@ -1,5 +1,5 @@
 import axios from "axios";
-import HeaderTitle from "components/HeaderTitle";
+import HeaderTitle from "components/home/HeaderTitle";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import media from "styles/media";

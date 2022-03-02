@@ -1,6 +1,6 @@
 import { Viewer } from "@toast-ui/react-editor";
 import axios from "axios";
-import HeaderTitle from "components/HeaderTitle";
+import HeaderTitle from "components/home/HeaderTitle";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";

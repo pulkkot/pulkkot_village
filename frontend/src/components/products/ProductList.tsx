@@ -4,7 +4,7 @@ import axios from "axios";
 import { IProduct } from "types/product";
 import ProductItem from "./ProductItem";
 import media from "styles/media";
-import HeaderTitle from "components/HeaderTitle";
+import HeaderTitle from "components/home/HeaderTitle";
 
 function ProductList() {
   const [productList, setProductList] = useState<IProduct[]>();

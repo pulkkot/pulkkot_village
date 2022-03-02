@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { ReactElement } from "react";
-import MainContents from "components/MainContents";
-import MainLayout from "components/MainLayout";
+import MainContents from "components/home/MainContents";
+import MainLayout from "components/home/MainLayout";
 
 function MainPage(): ReactElement {
   return (

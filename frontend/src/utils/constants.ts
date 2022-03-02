@@ -2,7 +2,7 @@ export const menuList = [
   {
     menuId: 1,
     menuName: "ABOUT",
-    menuLink: "/",
+    menuLink: "/about",
   },
   {
     menuId: 2,
@@ -14,14 +14,14 @@ export const menuList = [
     menuName: "SHOP",
     menuLink: "/products",
   },
-  // {
-  //   menuId: 4,
-  //   menuName: "PROJECT",
-  //   menuLink: "/",
-  // },
   {
-    menuId: 5,
-    menuName: "STORE",
+    menuId: 4,
+    menuName: "PROJECT",
     menuLink: "/",
   },
+  // {
+  //   menuId: 5,
+  //   menuName: "STORE",
+  //   menuLink: "/",
+  // },
 ];
