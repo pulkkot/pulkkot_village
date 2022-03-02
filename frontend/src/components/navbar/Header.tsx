@@ -1,24 +1,40 @@
 import { HamburgerIcon } from "assets/images";
-import Button from "components/common/Button";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import media from "styles/media";
 import MenuList from "./MenuList";
+import SideBar from "./SideBar";
 
 function Header() {
+  const [isMenuShowing, setIsMenuShowing] = useState(false);
+  const onHandleSideBar = () => {
+    setIsMenuShowing((prev) => !prev);
+  };
   return (
-    <HeaderContainer>
-      <MainLogo href="/">Pulkkot Village</MainLogo>
-      <HamburgerBtn>
-        <img src={HamburgerIcon} alt="hb-menu-btn"></img>
-      </HamburgerBtn>
-      <MenuList />
-    </HeaderContainer>
+    <>
+      <HeaderContainer>
+        <MainLogo>
+          <Link to="/">Pulkkot Village</Link>
+        </MainLogo>
+        <MenuList />
+        <HamburgerBtn onClick={onHandleSideBar}>
+          <img src={HamburgerIcon} alt="hb-menu-btn"></img>
+        </HamburgerBtn>
+      </HeaderContainer>
+      <SideBar
+        isMenuShowing={isMenuShowing}
+        onHandleSideBar={onHandleSideBar}
+      />
+    </>
   );
 }
 
 export default Header;
 
 const HeaderContainer = styled.div`
+  position: fixed;
+  width: 100%;
   display: flex;
   height: 70px;
   background-color: ${({ theme }) => theme.colors.black};
@@ -31,12 +47,12 @@ const HeaderContainer = styled.div`
   }
 `;
 
-const MainLogo = styled.a`
+const MainLogo = styled.div`
   font-size: ${({ theme }) => theme.fontSize.title}px;
   color: ${({ theme }) => theme.colors.white};
   ${media.medium} {
-    width: 90%;
     text-align: center;
+    font-size: ${({ theme }) => theme.fontSize.content}px;
   }
 `;
 
@@ -46,10 +62,10 @@ const HamburgerBtn = styled.button`
   display: none;
   cursor: pointer;
   ${media.medium} {
-    width: 10%;
     display: inline;
     position: absolute;
-    right: 0;
+    left: 0;
+    margin-left: 15px;
   }
   img {
     height: 14px;

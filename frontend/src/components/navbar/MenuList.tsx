@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import media from "styles/media";
+import { menuList } from "utils/constants";
 import MenuItem from "./MenuItem";
 
 interface IMenu {
@@ -7,33 +8,7 @@ interface IMenu {
   menuName: string;
   menuLink: string;
 }
-const menuList = [
-  {
-    menuId: 1,
-    menuName: "ABOUT",
-    menuLink: "/",
-  },
-  {
-    menuId: 2,
-    menuName: "CLASS",
-    menuLink: "/articles",
-  },
-  {
-    menuId: 3,
-    menuName: "SHOP",
-    menuLink: "/products",
-  },
-  // {
-  //   menuId: 4,
-  //   menuName: "PROJECT",
-  //   menuLink: "/",
-  // },
-  {
-    menuId: 5,
-    menuName: "STORE",
-    menuLink: "/",
-  },
-];
+
 function MenuList() {
   return (
     <MenuListContainer>
