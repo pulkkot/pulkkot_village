@@ -2,7 +2,7 @@ import { DefaultTheme } from "styled-components";
 
 const colors = {
   header: "#1565C0",
-  primary: "#b2edd4",
+  primary: "#6cc1ba",
   white: "#ffffff",
   black: "#000000",
   dateText: "#939FA5",
