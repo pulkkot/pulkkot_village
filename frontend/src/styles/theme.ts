@@ -2,7 +2,7 @@ import { DefaultTheme } from "styled-components";
 
 const colors = {
   header: "#1565C0",
-  primary: "#b2edd4",
+  primary: "#6cc1ba",
   white: "#ffffff",
   black: "#000000",
   dateText: "#939FA5",
@@ -15,7 +15,7 @@ const colors = {
 const fontSize = {
   title: 27,
   content: 18,
-  subTitle: 16,
+  subTitle: 20,
   text: 15,
   smallText: 13,
 };

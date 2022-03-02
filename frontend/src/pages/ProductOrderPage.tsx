@@ -1,4 +1,4 @@
-import MainLayout from "components/MainLayout";
+import MainLayout from "components/home/MainLayout";
 import ProductOrder from "components/products/ProductOrder";
 
 function ProductOrderPage() {

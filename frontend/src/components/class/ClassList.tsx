@@ -1,6 +1,8 @@
 import axios from "axios";
+import HeaderTitle from "components/home/HeaderTitle";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import media from "styles/media";
 import { IClass } from "types/class";
 import ClassItem from "./ClassItem";
 
@@ -23,7 +25,10 @@ function ClassList() {
   }, [classList]);
   return (
     <ClassWrapper>
-      <Title>Flower Class</Title>
+      <Title>
+        <h1>Flower Class</h1>
+      </Title>
+      <HeaderTitle title="Flower Class" />
       <ClassListContainer>
         {classList &&
           classList?.map((item: IClass) => (
@@ -47,15 +52,25 @@ const ClassWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 100px;
+  ${media.medium} {
+    margin-top: 0;
+  }
 `;
 
-const Title = styled.h1`
+const Title = styled.div`
   font-size: ${({ theme }) => theme.fontSize.title}px;
   color: ${({ theme }) => theme.colors.grayText};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${media.medium} {
+    display: none;
+  }
 `;
 
 const ClassListContainer = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;

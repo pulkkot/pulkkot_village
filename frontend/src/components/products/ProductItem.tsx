@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import media from "styles/media";
 import { IProduct } from "types/product";
 import { comma } from "utils/comma";
 
@@ -17,7 +18,7 @@ function ProductItem({
         <ProductImage src={thumbnail_image} />
         <ProductInfoBox>
           <ProductTitle>{name}</ProductTitle>
-          <ProductPrice>{comma(price)}won</ProductPrice>
+          <ProductSubTitle> Lorem ipsum dolor sit amet</ProductSubTitle>
         </ProductInfoBox>
       </ProductContainer>
     </Link>
@@ -33,11 +34,20 @@ const ProductContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${media.medium} {
+    width: 210px;
+    height: 260px;
+    margin-bottom: 20px;
+  }
 `;
 
 const ProductImage = styled.img`
   width: 380px;
   height: 380px;
+  ${media.medium} {
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 const ProductInfoBox = styled.div`
@@ -55,7 +65,11 @@ const ProductTitle = styled.div`
   color: #363636;
 `;
 
-const ProductPrice = styled.div`
+const ProductSubTitle = styled.span`
   font-size: ${({ theme }) => theme.fontSize.smallText}px;
   margin-top: 15px;
+  color: ${({ theme }) => theme.colors.primary};
+  ${media.medium} {
+    margin-top: 5px;
+  }
 `;

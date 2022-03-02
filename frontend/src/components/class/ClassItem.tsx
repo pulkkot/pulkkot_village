@@ -10,7 +10,7 @@ function ClassItem({ id, title, thumbnail_image }: IClass) {
       <ClassContatiner>
         {/* <Viewer initialValue={content} /> */}
         <ThumbnailImage src={thumbnail_image} alt={title}></ThumbnailImage>
-        <ClassTitle>{title} </ClassTitle>
+        <ClassTitle>{title}</ClassTitle>
       </ClassContatiner>
     </Link>
   );

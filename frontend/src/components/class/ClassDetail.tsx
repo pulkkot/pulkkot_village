@@ -1,8 +1,10 @@
 import { Viewer } from "@toast-ui/react-editor";
 import axios from "axios";
+import HeaderTitle from "components/home/HeaderTitle";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
+import media from "styles/media";
 import { IClass } from "types/class";
 
 function ClassDetail() {
@@ -24,12 +26,15 @@ function ClassDetail() {
 
   return (
     <ClassDetailContainer>
-      <Title>{classInfo?.title}</Title>
-      <SubTitle>
-        꽃, 그리고 나에게만 집중하며 손끝으로 전해지는 계절의 아름다움을
-        느껴보세요.
-      </SubTitle>
-      <ClassImage src={classInfo?.thumbnail_image}></ClassImage>
+      <TopClassDetail>
+        <Title>{classInfo?.title}</Title>
+        <HeaderTitle title={classInfo?.title} />
+        <SubTitle>
+          꽃, 그리고 나에게만 집중하며 손끝으로 전해지는 계절의 아름다움을
+          느껴보세요.
+        </SubTitle>
+        <ClassImage src={classInfo?.thumbnail_image}></ClassImage>
+      </TopClassDetail>
       <Content>
         {classInfo && <Viewer initialValue={classInfo.content} />}
       </Content>
@@ -41,17 +46,32 @@ export default ClassDetail;
 
 const ClassDetailContainer = styled.div`
   margin-top: 100px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ${media.medium} {
+    margin-top: 0;
+  }
+`;
+const TopClassDetail = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  ${media.medium} {
+    padding-bottom: 40px;
+  }
 `;
 
 const SubTitle = styled.span`
   margin-top: 20px;
   color: ${({ theme }) => theme.colors.grayText};
-  display: inline-block;
-  width: 25%;
+  display: block;
+  width: 80%;
+  text-align: center;
 `;
 
 const ClassImage = styled.img`
@@ -61,9 +81,12 @@ const ClassImage = styled.img`
 `;
 
 const Title = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.title}px;
+  font-size: ${({ theme }) => theme.fontSize.content}px;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.grayText};
+  ${media.medium} {
+    display: none;
+  }
 `;
 const Content = styled.div`
   margin-top: 100px;

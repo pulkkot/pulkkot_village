@@ -1,13 +1,11 @@
-import MainLayout from "components/MainLayout";
+import MainLayout from "components/home/MainLayout";
 import ProductAdd from "components/products/ProductAdd";
 
 function ProductAddPage() {
   return (
-    <>
-      <MainLayout>
-        <ProductAdd />
-      </MainLayout>
-    </>
+    <MainLayout>
+      <ProductAdd />
+    </MainLayout>
   );
 }
 
