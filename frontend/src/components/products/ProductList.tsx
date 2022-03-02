@@ -4,6 +4,7 @@ import axios from "axios";
 import { IProduct } from "types/product";
 import ProductItem from "./ProductItem";
 import media from "styles/media";
+import HeaderTitle from "components/HeaderTitle";
 
 function ProductList() {
   const [productList, setProductList] = useState<IProduct[]>();
@@ -21,6 +22,7 @@ function ProductList() {
       <Title>
         <h1>Flowers</h1>
       </Title>
+      <HeaderTitle title="Flowers" />
       <ProductListContainer>
         {productList?.map((item) => (
           <ProductItem
@@ -46,7 +48,7 @@ const ProductListWrapper = styled.div`
   flex-direction: column;
   margin-top: 100px;
   ${media.medium} {
-    margin-top: 60px;
+    margin-top: 0;
   }
 `;
 
@@ -57,11 +59,8 @@ const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   ${media.medium} {
-    height: 60px;
-    font-size: ${({ theme }) => theme.fontSize.content}px;
-    border-bottom: #d3d3d3 1px solid;
+    display: none;
   }
 `;
 
@@ -70,4 +69,5 @@ const ProductListContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 10px;
 `;

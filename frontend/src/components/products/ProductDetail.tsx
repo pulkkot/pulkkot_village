@@ -2,9 +2,11 @@ import { Viewer } from "@toast-ui/react-editor";
 import axios from "axios";
 import Button from "components/common/Button";
 import { Toggle } from "components/common/Toggle";
+import HeaderTitle from "components/HeaderTitle";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
+import media from "styles/media";
 import { IProduct } from "types/product";
 import { comma } from "utils/comma";
 
@@ -32,6 +34,7 @@ function ProductDetail() {
   return (
     <Wrapper>
       <ProductDetailContainer>
+        <HeaderTitle title={productInfo?.name} />
         <ImageContainer>
           <ThumbnailImg src={productInfo?.thumbnail_image} />
         </ImageContainer>
@@ -39,6 +42,10 @@ function ProductDetail() {
         <ProductInfo>
           <Title>{productInfo?.name}</Title>
           <SubTitle>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </SubTitle>
+        </ProductInfo>
+        {/* <SubTitle>
             {productInfo ? comma(productInfo.price * quantity) : null}원
           </SubTitle>
 
@@ -84,8 +91,7 @@ function ProductDetail() {
             <Button variant="primary" width="200px" height="50px">
               장바구니
             </Button>
-          </ButtonWrapper>
-        </ProductInfo>
+          </ButtonWrapper> */}
       </ProductDetailContainer>
       <Description>
         {productInfo && <Viewer initialValue={productInfo.description} />}
@@ -107,20 +113,32 @@ const ProductDetailContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  ${media.medium} {
+    margin-top: 0;
+    flex-direction: column;
+  }
 `;
 
-const ImageContainer = styled.div``;
+const ImageContainer = styled.div`
+  width: 50%;
+  ${media.medium} {
+    width: 100%;
+  }
+`;
 const ThumbnailImg = styled.img`
-  width: 550px;
-  height: 550px;
+  width: 100%;
 `;
 const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 40%;
+  width: 50%;
   height: 300px;
   padding-left: 40px;
+  ${media.medium} {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 const Title = styled.h1`
   font-size: 30px;
