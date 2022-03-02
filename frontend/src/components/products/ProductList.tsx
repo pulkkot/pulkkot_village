@@ -19,7 +19,7 @@ function ProductList() {
   return (
     <ProductListWrapper>
       <Title>
-        <h1>상품 보기</h1>
+        <h1>Flowers</h1>
       </Title>
       <ProductListContainer>
         {productList?.map((item) => (
