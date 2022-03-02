@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import main_page_img_3 from "assets/images/main_page_img_3.jpg";
-import main_page_img_4 from "assets/images/main_page_img_4.jpg";
-import main_page_img_2 from "assets/images/main_page_img_2.jpg";
+import { MainImg_2 } from "assets/images";
+import { MainImg_4 } from "assets/images";
+import media from "styles/media";
 
 function MainCarousel() {
   return (
@@ -14,18 +14,25 @@ function MainCarousel() {
         transitionTime={1000}
         emulateTouch={true}
         infiniteLoop={true}
+        showArrows={false}
+        showThumbs={false}
+        showStatus={false}
       >
         <div>
-          <img src={main_page_img_3} alt="img" />
+          <img src={MainImg_4} alt="img" />
           <p className="legend">flower class</p>
         </div>
         <div>
-          <img src={main_page_img_2} alt="img" />
+          <img src={MainImg_2} alt="img" />
           <p className="legend">flower project</p>
         </div>
         <div>
-          <img src={main_page_img_4} alt="img" />
+          <img src={MainImg_4} alt="img" />
           <p className="legend">flower products</p>
+        </div>
+        <div>
+          <img src={MainImg_2} alt="img" />
+          <p className="legend">flower project</p>
         </div>
       </Carousel>
     </CarouselWrapper>
@@ -37,4 +44,9 @@ export default MainCarousel;
 const CarouselWrapper = styled.div`
   margin-top: 100px;
   cursor: pointer;
+  width: 900px;
+  ${media.medium} {
+    margin-top: 60px;
+    width: 100%;
+  }
 `;
