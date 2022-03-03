@@ -15,6 +15,11 @@ function ProductOrder() {
     <OrderWrapper>
       <Title>주문하기</Title>
       <SubTitle>주문내역 확인</SubTitle>
+      <SubTitle>
+        {productName}
+        {price}
+        {stock}
+      </SubTitle>
       <Form onSubmit={onSubmit}>
         <SubTitle>주문자 정보</SubTitle>
         <InputWrapper>
