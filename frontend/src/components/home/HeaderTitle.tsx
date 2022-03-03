@@ -1,12 +1,15 @@
+import { useNavigate } from "react-router";
 import styled from "styled-components";
 import media from "styles/media";
-
 interface IHeaderTitleProps {
   title?: string;
 }
 function HeaderTitle({ title }: IHeaderTitleProps) {
+  const navigate = useNavigate();
+
   return (
     <TitleContainer>
+      <BackIcon onClick={() => navigate(-1)}>🔙</BackIcon>
       <Title>{title}</Title>
     </TitleContainer>
   );
@@ -29,3 +32,10 @@ const TitleContainer = styled.div`
   }
 `;
 const Title = styled.h1``;
+
+const BackIcon = styled.div`
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+  cursor: pointer;
+`;

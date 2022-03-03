@@ -28,6 +28,7 @@ const MenuItemContainer = styled.li`
     background-color: ${({ theme }) => theme.colors.menuHover};
   }
   ${media.medium} {
+    font-size: ${({ theme }) => theme.fontSize.text}px;
     padding-left: 20px;
     border-bottom: #d3d3d3 1px solid;
   }

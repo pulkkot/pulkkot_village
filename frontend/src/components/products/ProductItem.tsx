@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import media from "styles/media";
 import { IProduct } from "types/product";
-import { comma } from "utils/comma";
 
 function ProductItem({
   id,

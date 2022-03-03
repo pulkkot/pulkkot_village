@@ -21,6 +21,7 @@ const LayoutContainer = styled.div`
   justify-content: center;
 `;
 const Layout = styled.div`
+  min-width: ${Breakpoints.small}px;
   width: ${Breakpoints.large}px;
   height: 100vh;
 

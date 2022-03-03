@@ -14,8 +14,8 @@ const colors = {
 
 const fontSize = {
   title: 27,
-  content: 18,
   subTitle: 20,
+  content: 18,
   text: 15,
   smallText: 13,
 };
