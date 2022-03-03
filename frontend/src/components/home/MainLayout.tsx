@@ -20,6 +20,7 @@ const LayoutContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
+
 const Layout = styled.div`
   min-width: ${Breakpoints.small}px;
   width: ${Breakpoints.large}px;
