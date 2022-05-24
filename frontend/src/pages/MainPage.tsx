@@ -19,12 +19,14 @@ function MainPage(): ReactElement {
 export default MainPage;
 
 const MainContainer = styled.div`
-  margin-bottom: 4200px;
+  min-height: 100%;
+  position: relative;
+  /* margin-bottom: 4200px; */
   ${media.large} {
-    margin-bottom: 3200px;
+    /* margin-bottom: 3200px; */
   }
   ${media.medium} {
-    margin-bottom: 1500px;
+    /* margin-bottom: 1500px; */
   }
 `;
 

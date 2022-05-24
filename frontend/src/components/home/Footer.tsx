@@ -20,8 +20,8 @@ function Footer() {
 export default Footer;
 
 const FooterWrapper = styled.footer`
-  margin-top: 400px;
   height: 200px;
+  bottom: 0;
   width: 100%;
   position: relative;
   transform: translateY(100%);

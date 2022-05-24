@@ -19,12 +19,12 @@ export default MainLayout;
 const LayoutContainer = styled.div`
   display: flex;
   justify-content: center;
+  min-height: 100%;
 `;
 
 const Layout = styled.div`
   min-width: ${Breakpoints.small}px;
   width: ${Breakpoints.large}px;
-  height: 100vh;
 
   ${media.large} {
     width: ${Breakpoints.medium}px;
