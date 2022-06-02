@@ -7,8 +7,23 @@ function LocationInfo() {
     <LocationInfoWrapper>
       <LocationTitle>Store Location</LocationTitle>
       <LocationSubTitle>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        풀꽃빌리지 OPEN 월요일-일요일, 오전 11시 - 오후 8시
       </LocationSubTitle>
+      <LocationSubTitle>
+        ADDRESS 광주광역시 광산구 수완로10번길 28
+      </LocationSubTitle>
+      <LocationSubTitle>
+        E-MAIL hipulkkot@gmail.com INSTAGRAM 쇼룸계정 @pulkkot_village 식물계정
+        @pulkkot_village_plant
+      </LocationSubTitle>
+      <LocationSubTitle>TEL 062-962-8813</LocationSubTitle>
+      <LocationSubTitle>
+        PULKKOT VILLAGE OPEN MONDAY-SUNDAY, 11AM - 8PM ADDRESS 28, 10BEON-GIL
+        SUWAN-RO GWANGSAN-GU, GWANGJU REPUBLIC OF KOREA E-MAIL
+        hipulkkot@gmail.com INSTAGRAM SHOWROOM @pulkkot_village PLANT
+        @pulkkot_village_plant
+      </LocationSubTitle>
+
       <MapAnchor
         href="http://naver.me/5U1F2JUu"
         rel="noreferrer"
@@ -55,6 +70,8 @@ const MapAnchor = styled.a`
 
 const LocationSubTitle = styled.span`
   color: ${({ theme }) => theme.colors.primary};
+  width: 60%;
+  text-align: center;
   margin-bottom: 20px;
   ${media.medium} {
     margin-left: 10px;

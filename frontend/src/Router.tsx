@@ -9,6 +9,7 @@ import ProductDetailPage from "pages/ProductDetailPage";
 import ProductAddPage from "pages/ProductAddPage";
 import ProductOrderPage from "pages/ProductOrderPage";
 import AboutPage from "pages/AboutPage";
+import Footer from "components/home/Footer";
 
 function Router() {
   return (
@@ -26,6 +27,7 @@ function Router() {
         <Route path="/products/:id" element={<ProductDetailPage />} />
         <Route path="/products/order" element={<ProductOrderPage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
