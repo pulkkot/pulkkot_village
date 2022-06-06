@@ -1,5 +1,5 @@
 import BrandStory from "components/about/BrandStory";
-import LocationInfo from "components/about/LocationInfo";
+import StoreInfo from "components/about/StoreInfo";
 import HeaderTitle from "components/home/HeaderTitle";
 import MainLayout from "components/home/MainLayout";
 
@@ -8,7 +8,7 @@ function AboutPage() {
     <MainLayout>
       <HeaderTitle title="About" />
       <BrandStory />
-      <LocationInfo />
+      <StoreInfo />
     </MainLayout>
   );
 }
