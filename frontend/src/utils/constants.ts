@@ -17,7 +17,7 @@ export const menuList = [
   {
     menuId: 4,
     menuName: "PROJECT",
-    menuLink: "/",
+    menuLink: "/projects",
   },
   // {
   //   menuId: 5,

@@ -10,6 +10,8 @@ import ProductAddPage from "pages/ProductAddPage";
 import ProductOrderPage from "pages/ProductOrderPage";
 import AboutPage from "pages/AboutPage";
 import Footer from "components/home/Footer";
+import ProjectPage from "pages/ProjectPage";
+import ProjectDetail from "components/projects/ProjectDetail";
 
 function Router() {
   return (
@@ -26,6 +28,9 @@ function Router() {
         <Route path="/products/add" element={<ProductAddPage />} />
         <Route path="/products/:id" element={<ProductDetailPage />} />
         <Route path="/products/order" element={<ProductOrderPage />} />
+
+        <Route path="/projects" element={<ProjectPage />} />
+        <Route path="/projects/:id" element={<ProjectDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
