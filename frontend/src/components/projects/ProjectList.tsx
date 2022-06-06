@@ -8,8 +8,8 @@ function ProjectList() {
     <ProjectMenuWrapper>
       {menus.map((menu, index) => {
         return (
-          <Link to={`/projects/${index}`}>
-            <ProjectMenuContent key={index}>{menu}</ProjectMenuContent>
+          <Link to={`/projects/${index}`} key={index}>
+            <ProjectMenuContent>{menu}</ProjectMenuContent>
           </Link>
         );
       })}
